@@ -8,68 +8,18 @@
 @import url(../icons/material-design-iconic-font/css/materialdesignicons.min.css);
 @import url(spinners.css);
 @import url(animate.css);
-/*
-    Template: Ela Admin
-    Author: Zebra Theme
-    Developer by: Zebra Theme
 
-    Table of Content
-    ================
 
-1. variable
-2. fonts
-3. card
-4. global
-5. badge
-6. tab
-7. modal
-8. timeline
-9. data-table
-10. panel
-11. button
-12. header
-13. gmap
-14. chat
-15. carousel
-16. weather
-17. invoice-edit
-18. invoice
-19. widget-stat
-20. recent-comments
-21. recent-message
-22. forms
-23. compose-email
-24. progress-bar
-25. todo-list
-26. datamap
-27. table
-28. order-progress
-29. login
-30. chart
-31. nestable
-32. profile
-33. profile-widget
-34. ui-element-basic
-35. calendar
-36. flot-chart
-37. morris-chart
-38. products_1
-39. products_2
-40. products_3
-41. favourite_menu
-42. order-list
-43. booking-system
-44. scrollable
-45. vector-map
-46. menu-upload
-47. social-media-stats
-48. vertical-carousel
-49. chartist
-50. table-export
-51. ui-widget-v1
-42. responsive
+@font-face {
+    font-family: 'roboto-thin';
+    src: url('../fonts/roboto.thin.ttf');
+}
 
-*/
+@font-face {
+    font-family: 'roboto-thin-italic';
+    src: url('../fonts/roboto.thin-italic.ttf');
+}
+
 .preloader {
   width: 100%;
   height: 100%;

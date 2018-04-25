@@ -1,3 +1,5 @@
+{%load static%}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,17 +12,17 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
-    <title>Ela - Bootstrap Admin Dashboard Template</title>
+    <title>Alize - Visualize Your GitHub Profile</title>
     <!-- Bootstrap Core CSS -->
     <link href="static/css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
 
-    <link href="static/css/lib/calendar2/semantic.ui.min.css" rel="stylesheet">
-    <link href="static/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
-    <link href="static/css/lib/owl.carousel.min.css" rel="stylesheet" />
-    <link href="static/css/lib/owl.theme.default.min.css" rel="stylesheet" />
-    <link href="static/css/helper.css" rel="stylesheet">
-    <link href="static/css/style.css" rel="stylesheet">
+    <link href="{%static 'css/lib/calendar2/semantic.ui.min.css'%}" rel="stylesheet">
+    <link href="{%static 'css/lib/calendar2/pignose.calendar.min.css'%}" rel="stylesheet">
+    <link href="{%static 'css/lib/owl.carousel.min.css'%}" rel="stylesheet" />
+    <link href="{%static 'css/lib/owl.theme.default.min.css'%}" rel="stylesheet" />
+    <link href="{%static 'css/helper.css'%}" rel="stylesheet">
+    <link href="{%static 'css/style.css'%}" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:** -->
     <!--[if lt IE 9]>
@@ -48,8 +50,8 @@
                                         </div>
                                     </header>
 
-                                    <h3>Allison Walker</h3>
-                                    <div class="desc">
+                                    <h3 style="font-family: roboto-thin">Yasin Toy</h3>
+                                    <div class="desc" style="font-family: roboto-thin">
                                         Lorem ipsum dolor sit amet, consectetur adipisicing elit et cupiditate deleniti.
                                     </div>
                                     <div class="contacts">
@@ -188,7 +190,7 @@
                                     </div>
                                     <div class="item">
                                         <div class="testimonial-content">
-                                            <img class="testimonial-author-img" src="images/avatar/3.jpg" alt="" />
+                                            <img class="testimonial-author-img" src="{%static 'images/avatar/3.jpg'%}" alt="" />
                                             <div class="testimonial-author">Abraham</div>
                                             <div class="testimonial-author-position">Founder-Ceo. Dell Corp</div>
 
@@ -200,7 +202,7 @@
                                     </div>
                                     <div class="item">
                                         <div class="testimonial-content">
-                                            <img class="testimonial-author-img" src="static/images/avatar/1.jpg" alt="" />
+                                            <img class="testimonial-author-img" src="{%static 'images/avatar/1.jpg'%}" alt="" />
                                             <div class="testimonial-author">Lincoln</div>
                                             <div class="testimonial-author-position">Founder-Ceo. Dell Corp</div>
 
@@ -212,7 +214,7 @@
                                     </div>
                                     <div class="item">
                                         <div class="testimonial-content">
-                                            <img class="testimonial-author-img" src="static/images/avatar/4.jpg" alt="" />
+                                            <img class="testimonial-author-img" src="{%static 'images/avatar/4.jpg'%}" alt="" />
                                             <div class="testimonial-author">TYRION LANNISTER</div>
                                             <div class="testimonial-author-position">Founder-Ceo. Dell Corp</div>
 
@@ -224,7 +226,7 @@
                                     </div>
                                     <div class="item">
                                         <div class="testimonial-content">
-                                            <img class="testimonial-author-img" src="static/images/avatar/5.jpg" alt="" />
+                                            <img class="testimonial-author-img" src="{%static 'images/avatar/5.jpg'%}" alt="" />
                                             <div class="testimonial-author">TYRION LANNISTER</div>
                                             <div class="testimonial-author-position">Founder-Ceo. Dell Corp</div>
 
@@ -236,7 +238,7 @@
                                     </div>
                                     <div class="item">
                                         <div class="testimonial-content">
-                                            <img class="testimonial-author-img" src="static/images/avatar/6.jpg" alt="" />
+                                            <img class="testimonial-author-img" src="{%static 'images/avatar/6.jpg'%}" alt="" />
                                             <div class="testimonial-author">TYRION LANNISTER</div>
                                             <div class="testimonial-author-position">Founder-Ceo. Dell Corp</div>
 
@@ -272,7 +274,7 @@
                                             <tr>
                                                 <td>
                                                     <div class="round-img">
-                                                        <a href=""><img src="static/images/avatar/4.jpg" alt=""></a>
+                                                        <a href=""><img src="{%static 'images/avatar/4.jpg'%}" alt=""></a>
                                                     </div>
                                                 </td>
                                                 <td>John Abraham</td>
@@ -283,7 +285,7 @@
                                             <tr>
                                                 <td>
                                                     <div class="round-img">
-                                                        <a href=""><img src="static/images/avatar/2.jpg" alt=""></a>
+                                                        <a href=""><img src="{%static 'images/avatar/2.jpg'%}" alt=""></a>
                                                     </div>
                                                 </td>
                                                 <td>John Abraham</td>
@@ -294,7 +296,7 @@
                                             <tr>
                                                 <td>
                                                     <div class="round-img">
-                                                        <a href=""><img src="static/images/avatar/3.jpg" alt=""></a>
+                                                        <a href=""><img src="{%static 'images/avatar/3.jpg'%}" alt=""></a>
                                                     </div>
                                                 </td>
                                                 <td>John Abraham</td>
@@ -305,7 +307,7 @@
                                             <tr>
                                                 <td>
                                                     <div class="round-img">
-                                                        <a href=""><img src="static/images/avatar/4.jpg" alt=""></a>
+                                                        <a href=""><img src="{%static 'images/avatar/4.jpg'%}" alt=""></a>
                                                     </div>
                                                 </td>
                                                 <td>John Abraham</td>
@@ -333,7 +335,7 @@
 								<div class="recent-comment">
 									<div class="media">
 										<div class="media-left">
-											<a href="#"><img alt="..." src="images/avatar/1.jpg" class="media-object"></a>
+											<a href="#"><img alt="..." src="{%static 'images/avatar/1.jpg'%}" class="media-object"></a>
 										</div>
 										<div class="media-body">
 											<h4 class="media-heading">john doe</h4>
@@ -343,7 +345,7 @@
 									</div>
 									<div class="media">
 										<div class="media-left">
-											<a href="#"><img alt="..." src="images/avatar/1.jpg" class="media-object"></a>
+											<a href="#"><img alt="..." src="{%static 'images/avatar/1.jpg'%}" class="media-object"></a>
 										</div>
 										<div class="media-body">
 											<h4 class="media-heading">john doe</h4>
@@ -354,7 +356,7 @@
 
 									<div class="media">
 										<div class="media-left">
-											<a href="#"><img alt="..." src="images/avatar/1.jpg" class="media-object"></a>
+											<a href="#"><img alt="..." src="{%static 'images/avatar/1.jpg'%}" class="media-object"></a>
 										</div>
 										<div class="media-body">
 											<h4 class="media-heading">john doe</h4>
@@ -365,7 +367,7 @@
 
 									<div class="media no-border">
 										<div class="media-left">
-											<a href="#"><img alt="..." src="static/images/avatar/1.jpg" class="media-object"></a>
+											<a href="#"><img alt="..." src="{%static 'images/avatar/1.jpg'%}" class="media-object"></a>
 										</div>
 										<div class="media-body">
 											<h4 class="media-heading">Mr. Michael</h4>
@@ -534,43 +536,53 @@
         <!-- End Page wrapper  -->
     </div>
     <!-- End Wrapper -->
-    <!-- All Jquery -->
-    <script src="static/js/lib/jquery/jquery.min.js"></script>
+
+    <script src="{%static 'js/lib/jquery/jquery.min.js'%}"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="static/js/lib/bootstrap/js/popper.min.js"></script>
-    <script src="static/js/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{%static 'js/lib/bootstrap/js/popper.min.js'%}"></script>
+    <script src="{%static 'js/lib/bootstrap/js/bootstrap.min.js'%}"></script>
     <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="static/js/jquery.slimscroll.js"></script>
+    <script src="{%static 'js/jquery.slimscroll.js'%}"></script>
     <!--Menu sidebar -->
-    <script src="static/js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <script src="{%static 'js/sidebarmenu.js'%}"></script>
+    <!--stickey kit -->
+    <script src="{%static 'js/lib/sticky-kit-master/dist/sticky-kit.min.js'%}"></script>
     <!--Custom JavaScript -->
+
     <!-- Amchart -->
-     <script src="static/js/lib/morris-chart/raphael-min.js"></script>
-    <script src="static/js/lib/morris-chart/morris.js"></script>
-    <script src="static/js/lib/morris-chart/dashboard1-init.js"></script>
+     <script src="{%static 'js/lib/morris-chart/raphael-min.js'%}"></script>
+    <script src="{%static 'js/lib/morris-chart/morris.js'%}"></script>
+    <script src="{%static 'js/lib/morris-chart/dashboard1-init.js'%}"></script>
 
 
-	<script src="static/js/lib/calendar-2/moment.latest.min.js"></script>
+    <script src="{%static 'js/lib/calendar-2/moment.latest.min.js'%}"></script>
     <!-- scripit init-->
-    <script src="static/js/lib/calendar-2/semantic.ui.min.js"></script>
+    <script src="{%static 'js/lib/calendar-2/semantic.ui.min.js'%}"></script>
     <!-- scripit init-->
-    <script src="static/js/lib/calendar-2/prism.min.js"></script>
+    <script src="{%static 'js/lib/calendar-2/prism.min.js'%}"></script>
     <!-- scripit init-->
-    <script src="static/js/lib/calendar-2/pignose.calendar.min.js"></script>
+    <script src="{%static 'js/lib/calendar-2/pignose.calendar.min.js'%}"></script>
     <!-- scripit init-->
-    <script src="static/js/lib/calendar-2/pignose.init.js"></script>
+    <script src="{%static 'js/lib/calendar-2/pignose.init.js'%}"></script>
 
-    <script src="static/js/lib/owl-carousel/owl.carousel.min.js"></script>
-    <script src="static/js/lib/owl-carousel/owl.carousel-init.js"></script>
-    <script src="static/js/scripts.js"></script>
+    <script src="{%static 'js/lib/owl-carousel/owl.carousel.min.js'%}"></script>
+    <script src="{%static 'js/lib/owl-carousel/owl.carousel-init.js'%}"></script>
+    <script src="{%static 'js/scripts.js'%}"></script>
     <!-- scripit init-->
-        <script src="static/js/lib/flot-chart/excanvas.min.js"></script>
-    <script src="static/js/lib/flot-chart/jquery.flot.js"></script>
 
-    <!--Custom JavaScript -->
-    <script src="static/js/custom.min.js"></script>
+        <!--  flot-chart js -->
+    <script src="{%static 'js/lib/flot-chart/excanvas.min.js'%}"></script>
+    <script src="{%static 'js/lib/flot-chart/jquery.flot.js'%}"></script>
+    <script src="{%static 'js/lib/flot-chart/jquery.flot.pie.js'%}"></script>
+    <script src="{%static 'js/lib/flot-chart/jquery.flot.time.js'%}"></script>
+    <script src="{%static 'js/lib/flot-chart/jquery.flot.stack.js'%}"></script>
+    <script src="{%static 'js/lib/flot-chart/jquery.flot.resize.js'%}"></script>
+    <script src="{%static 'js/lib/flot-chart/jquery.flot.crosshair.js'%}"></script>
+    <script src="{%static 'js/lib/flot-chart/curvedLines.js'%}"></script>
+    <script src="{%static 'js/lib/flot-chart/flot-tooltip/jquery.flot.tooltip.min.js'%}"></script>
+    <script src="{%static 'js/lib/flot-chart/flot-chart-init.js'%}"></script>
 
-    <script src="static/js/custom.min.js"></script>
+    <script src="{%static 'js/custom.min.js'%}"></script>
 
 </body>
 
