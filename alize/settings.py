@@ -27,8 +27,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Github token here
+API_TOKEN = os.environ.get('TOKEN')
+# GitHub api base endpoint
+API_BASE = "https://api.github.com/"
+if not API_TOKEN:
+    raise ImproperlyConfigured("Please, give a Github api key. Usage: export TOKEN='your api key here' ")
 
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -100,6 +105,19 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Cache time to live is 1 hour.
+CACHE_TTL = 60 * 60
+
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient"
+        },
+        "KEY_PREFIX": "visualize"
+    }
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/

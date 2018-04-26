@@ -50,9 +50,9 @@
                                         </div>
                                     </header>
 
-                                    <h3 style="font-family: roboto-thin">Yasin Toy</h3>
+                                    <h3 style="font-family: roboto-thin">{{info.name}}</h3>
                                     <div class="desc" style="font-family: roboto-thin">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit et cupiditate deleniti.
+                                        {{info.bio}}
                                     </div>
                                     <div class="contacts">
                                         <a href=""><i class="fa fa-plus"></i></a>
@@ -78,8 +78,8 @@
                                     <span><i class="fa fa-usd f-s-40 color-primary"></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
-                                    <h2>568120</h2>
-                                    <p class="m-b-0">Total Revenue</p>
+                                    <h2>{{info.total_repos}}</h2>
+                                    <p class="m-b-0">Total Repos</p>
                                 </div>
                             </div>
                         </div>
@@ -92,20 +92,7 @@
                                 </div>
                                 <div class="media-body media-text-right">
                                     <h2>1178</h2>
-                                    <p class="m-b-0">Sales</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card p-30">
-                            <div class="media">
-                                <div class="media-left meida media-middle">
-                                    <span><i class="fa fa-archive f-s-40 color-warning"></i></span>
-                                </div>
-                                <div class="media-body media-text-right">
-                                    <h2>25</h2>
-                                    <p class="m-b-0">Stores</p>
+                                    <p class="m-b-0">Total Stars</p>
                                 </div>
                             </div>
                         </div>
@@ -117,8 +104,21 @@
                                     <span><i class="fa fa-user f-s-40 color-danger"></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
-                                    <h2>847</h2>
-                                    <p class="m-b-0">Customer</p>
+                                    <h2>{{info.followers}}</h2>
+                                    <p class="m-b-0">Followers</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle">
+                                    <span><i class="fa fa-user f-s-40 color-danger"></i></span>
+                                </div>
+                                <div class="media-body media-text-right">
+                                    <h2>{{info.following}}</h2>
+                                    <p class="m-b-0">Following</p>
                                 </div>
                             </div>
                         </div>
@@ -451,7 +451,7 @@
                                 <h4>Real Chart</h4>
                             </div>
                             <div class="flot-container">
-                                <div id="cpu-load" class="cpu-load" style="padding: 0px; position: relative;"><canvas class="flot-base" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 477.5px; height: 345px;" width="477" height="345"></canvas><div class="flot-text" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;"><div class="flot-tick-label tickLabel" style="position: absolute; top: 329px; left: 13px; text-align: right;">0</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 263px; left: 7px; text-align: right;">20</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 197px; left: 7px; text-align: right;">40</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 132px; left: 7px; text-align: right;">60</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 66px; left: 7px; text-align: right;">80</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 0px; left: 0px; text-align: right;">100</div></div></div><canvas class="flot-overlay" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 477.5px; height: 345px;" width="477" height="345"></canvas></div>
+                                <img style="width: 100%; height: 63%; display: inline-block;" src="http://ghchart.rshah.org/409ba5/{{info.username}}" alt="{{info.username}}'s Github Chart" />
                             </div>
                         </div>
                         <!-- /# card -->
