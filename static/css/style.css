@@ -827,9 +827,9 @@ h6.h1 {
   fill: #62d1f3;
 }
 .bg-danger {
-  background: #fc6180 !important;
+  background: #26dad2 !important;
   color: #ffffff;
-  fill: #fc6180;
+  fill: #26dad2;
 }
 .bg-warning {
   background: #ffb64d !important;
@@ -5594,8 +5594,8 @@ tbody tr td:last-child {
 }
 .customtab li a.nav-link.active,
 .profile-tab li a.nav-link.active {
-  border-bottom: 2px solid #1976d2;
-  color: #1976d2;
+  border-bottom: 2px solid #26dad2;
+  color: #26dad2;
 }
 .card-two {
   position: relative;
@@ -5678,7 +5678,7 @@ tbody tr td:last-child {
   line-height: 39px;
   overflow: hidden;
   text-align: center;
-  border: 2px solid #1976d2;
+  border: 2px solid #26dad2;
   border-radius: 50%;
 }
 .card-two .contacts a .fa:before {

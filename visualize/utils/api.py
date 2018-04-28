@@ -5,7 +5,7 @@ from urllib.parse import urljoin
 from django.conf import settings
 
 
-def _make_request(url, cls, method='GET', params=None, url_params=None, **kwargs):
+def _make_request(url, cls, method='GET', params=None, url_params=None, pure=False, **kwargs):
     """ 
     @params url: request url
     @params method: request type (GET, POST, PUT, DELETE)
@@ -22,18 +22,20 @@ def _make_request(url, cls, method='GET', params=None, url_params=None, **kwargs
 
     response = requests.request(url=url, method=method,
                                 params=params, headers=headers, **kwargs)
+    if pure: 
+        return response
     return response.json()
 
 
 class Client(object):
     """
     Usage:
-        >> Client().user_info(access_token='a')
-        >> Client().user_repo_info(access_token='a')
+        >> Client().user_info(url_params={'username': "yasintoy"})
     """
     _endpoints = {
         'user_info': 'users/{username}',
-        'user_repo_info': 'users/{username}/repos'
+        'user_repo_info': 'users/{username}/repos',
+        'user_commits': 'repos/{username}/{repo_name}/commits?per_page=100&page={page}'
     }
 
     def __getattr__(self, name):

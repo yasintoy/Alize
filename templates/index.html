@@ -46,7 +46,7 @@
                                 <div class="card-two">
                                     <header>
                                         <div class="avatar">
-                                            <img src="https://randomuser.me/api/portraits/women/21.jpg" alt="Allison Walker">
+                                            <img src={{info.avatar}} alt="Yasin Toy">
                                         </div>
                                     </header>
 
@@ -55,9 +55,9 @@
                                         {{info.bio}}
                                     </div>
                                     <div class="contacts">
-                                        <a href=""><i class="fa fa-plus"></i></a>
-                                        <a href=""><i class="fa fa-whatsapp"></i></a>
-                                        <a href=""><i class="fa fa-envelope"></i></a>
+                                        <a href=""><i class="fa fa-plus color-success"></i></a>
+                                        <a href=""><i class="fa fa-whatsapp color-success"></i></a>
+                                        <a href=""><i class="fa fa-envelope color-success"></i></a>
                                         <div class="clear"></div>
                                     </div>
                                 </div>
@@ -75,11 +75,11 @@
                         <div class="card p-30">
                             <div class="media">
                                 <div class="media-left meida media-middle">
-                                    <span><i class="fa fa-usd f-s-40 color-primary"></i></span>
+                                    <span><i class="fa ti-comment f-s-40 color-success"></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
-                                    <h2>{{info.total_repos}}</h2>
-                                    <p class="m-b-0">Total Repos</p>
+                                    <h2 style="font-family: robot-thin">{{info.total_repos}}</h2>
+                                    <p style="font-family: robot-thin" class="m-b-0">Total Repos</p>
                                 </div>
                             </div>
                         </div>
@@ -88,11 +88,11 @@
                         <div class="card p-30">
                             <div class="media">
                                 <div class="media-left meida media-middle">
-                                    <span><i class="fa fa-shopping-cart f-s-40 color-success"></i></span>
+                                    <span><i class="fa ti-bag f-s-40 color-success"></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
-                                    <h2>1178</h2>
-                                    <p class="m-b-0">Total Stars</p>
+                                    <h2 style="font-family: robot-thin">1178</h2>
+                                    <p style="font-family: robot-thin" class="m-b-0">Total Stars</p>
                                 </div>
                             </div>
                         </div>
@@ -101,11 +101,11 @@
                         <div class="card p-30">
                             <div class="media">
                                 <div class="media-left meida media-middle">
-                                    <span><i class="fa fa-user f-s-40 color-danger"></i></span>
+                                    <span><i class="fa fa-user f-s-40 color-success"></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
-                                    <h2>{{info.followers}}</h2>
-                                    <p class="m-b-0">Followers</p>
+                                    <h2 style="font-family: robot-thin">{{info.followers}}</h2>
+                                    <p style="font-family: robot-thin" class="m-b-0">Followers</p>
                                 </div>
                             </div>
                         </div>
@@ -114,11 +114,11 @@
                         <div class="card p-30">
                             <div class="media">
                                 <div class="media-left meida media-middle">
-                                    <span><i class="fa fa-user f-s-40 color-danger"></i></span>
+                                    <span><i class="fa fa-user f-s-40 color-success"></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
-                                    <h2>{{info.following}}</h2>
-                                    <p class="m-b-0">Following</p>
+                                    <h2 style="font-family: robot-thin">{{info.following}}</h2>
+                                    <p style="font-family: robot-thin" class="m-b-0">Following</p>
                                 </div>
                             </div>
                         </div>
@@ -127,14 +127,16 @@
 
                 <div class="row bg-white m-l-0 m-r-0 box-shadow ">
 
-                    <!-- column -->
                     <div class="col-lg-8">
                         <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Extra Area Chart</h4>
-                                <div id="extra-area-chart"></div>
+                            <div class="card-title">
+                                <h4>Real Chart</h4>
+                            </div>
+                            <div class="flot-container">
+                                <img style="width: 100%; height: 63%; display: inline-block;" src="http://ghchart.rshah.org/26dad2/{{info.username}}" alt="{{info.username}}'s Github Chart" />
                             </div>
                         </div>
+                        <!-- /# card -->
                     </div>
                     <!-- column -->
 
@@ -142,35 +144,59 @@
                     <div class="col-lg-4">
                         <div class="card">
                             <div class="card-body browser">
-                                <p class="f-w-600">iMacs <span class="pull-right">85%</span></p>
-                                <div class="progress ">
-                                    <div role="progressbar" style="width: 85%; height:8px;" class="progress-bar bg-danger wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
-                                </div>
+                                {% for key, value in repo_info.languages_per_repos.items %}
+                                     <p class="f-w-600">{{key | title}} <span class="pull-right">{{value}}%</span></p>
+                                    <div class="progress ">
+                                        <div role="progressbar" style="width: {{value}}%; height:8px;" class="progress-bar bg-danger wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
+                                    </div>
+                                {%endfor%}
 
-                                <p class="m-t-30 f-w-600">iBooks<span class="pull-right">90%</span></p>
-                                <div class="progress">
-                                    <div role="progressbar" style="width: 90%; height:8px;" class="progress-bar bg-info wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
-                                </div>
-
-                                <p class="m-t-30 f-w-600">iPhone<span class="pull-right">65%</span></p>
-                                <div class="progress">
-                                    <div role="progressbar" style="width: 65%; height:8px;" class="progress-bar bg-success wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
-                                </div>
-
-                                <p class="m-t-30 f-w-600">Samsung<span class="pull-right">65%</span></p>
-                                <div class="progress">
-                                    <div role="progressbar" style="width: 65%; height:8px;" class="progress-bar bg-warning wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
-                                </div>
-
-								<p class="m-t-30 f-w-600">android<span class="pull-right">65%</span></p>
-                                <div class="progress m-b-30">
-                                    <div role="progressbar" style="width: 65%; height:8px;" class="progress-bar bg-success wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
-                                </div>
                             </div>
                         </div>
                     </div>
                     <!-- column -->
                 </div>
+
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-title">
+                                <h4 style="font-family: roboto-thin">{{info.username | title}} Ranking </h4>
+
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Language</th>
+                                                <th>{{user_raking.city | title}}</th>
+                                                <th>{{user_raking.country | title}}</th>
+                                                <th>WorldWide</th>
+                                                <th>Total Stars</th>
+                                                <th>Repos</th>
+                                            </tr>
+                                        </thead>
+                                <tbody>
+                                        {%for ranking in user_raking.rankings%}
+                                          <tr>
+                                            <td>{{forloop.counter}}</td>
+                                            <td>{{ranking.language}}</td>
+                                            <td><span class="badge badge-success">{{ranking.city_rank}} / {{ranking.city_count}} </span></td>
+                                            <td><span class="badge badge-success">{{ranking.country_rank}} / {{ranking.country_count}} </span> </td>
+                                            <td><span class="badge badge-success">{{ranking.world_rank}} / {{ranking.world_count}} </span> </td>
+                                            <td><span class="badge badge-success">{{ranking.stars_count}} </span> </td>
+                                            <td><span class="badge badge-success">{{ranking.repository_count}} </span> </td>
+                                        </tr>
+                                        {%endfor%}
+                                </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
                 <div class="row">
 					<div class="col-lg-3">
                         <div class="card bg-dark">
@@ -528,14 +554,245 @@
                     <!-- /# column -->
                 </div>
                 <!-- /# row -->
+
+                <div class="row">
+
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-title">
+                                <h4>Project</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="current-progress">
+                                    <div class="progress-content">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="progress-text">Website</div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="current-progressbar">
+                                                    <div class="progress">
+                                                        <div class="progress-bar progress-bar-primary w-40" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+                                                            40%
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="progress-content">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="progress-text">Android</div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="current-progressbar">
+                                                    <div class="progress">
+                                                        <div class="progress-bar progress-bar-primary w-60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                                                            60%
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="progress-content">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="progress-text">Ios</div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="current-progressbar">
+                                                    <div class="progress">
+                                                        <div class="progress-bar progress-bar-primary w-70" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                                                            70%
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="progress-content">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="progress-text">Mobile</div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="current-progressbar">
+                                                    <div class="progress">
+                                                        <div class="progress-bar progress-bar-primary w-90" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                                                            90%
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="progress-content">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="progress-text">Android</div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="current-progressbar">
+                                                    <div class="progress">
+                                                        <div class="progress-bar progress-bar-primary w-60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                                                            60%
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="progress-content">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="progress-text">Ios</div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="current-progressbar">
+                                                    <div class="progress">
+                                                        <div class="progress-bar progress-bar-primary w-70" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                                                            70%
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="progress-content">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="progress-text">Mobile</div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="current-progressbar">
+                                                    <div class="progress">
+                                                        <div class="progress-bar progress-bar-primary w-90" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                                                            90%
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /# column -->
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-title">
+                                <h4>Messages</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="recent-meaasge">
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <a href="#"><img alt="..." src="{%static 'images/avatar/1.jpg'%}" class="media-object"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <h4 class="media-heading">john doe</h4>
+                                            <div class="meaasge-date">15 minutes Ago</div>
+                                            <p class="f-s-12">We are happy about your service </p>
+                                        </div>
+                                    </div>
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <a href="#"><img alt="..." src="{%static 'images/avatar/2.jpg'%}" class="media-object"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <h4 class="media-heading">Mr. John</h4>
+                                            <div class="meaasge-date">40 minutes ago</div>
+                                            <p class="f-s-12">Quick service and good serve </p>
+                                        </div>
+                                    </div>
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <a href="#"><img alt="..." src="{%static 'images/avatar/3.jpg'%}" class="media-object"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <h4 class="media-heading">Mr. Michael</h4>
+                                            <div class="meaasge-date">1 minutes ago</div>
+                                            <p class="f-s-12">We like your birthday cake </p>
+                                        </div>
+                                    </div>
+                                    <div class="media no-border">
+                                        <div class="media-left">
+                                            <a href="#"><img alt="..." src="{%static 'images/avatar/2.jpg'%}" class="media-object"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <h4 class="media-heading">Mr. John</h4>
+                                            <div class="meaasge-date">40 minutes ago</div>
+                                            <p class="f-s-12">Quick service and good serve </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-title">
+                                <h4>Todo</h4>
+                            </div>
+                            <div class="todo-list">
+                                <div class="tdl-holder">
+                                    <div class="tdl-content">
+                                        <ul>
+                                            <li class="color-primary">
+                                                <label>
+                                                <input type="checkbox"><i class="bg-primary"></i><span>Post three to six times on Twitter.</span>
+                                                <a href="#" class="ti-close"></a>
+                                            </label>
+                                            </li>
+                                            <li class="color-success">
+                                                <label>
+                                                <input type="checkbox" checked=""><i class="bg-success"></i><span>Post one to two times on Facebook.</span>
+                                                <a href="#" class="ti-close"></a>
+                                            </label>
+                                            </li>
+                                            <li class="color-warning">
+                                                <label>
+                                                <input type="checkbox" checked=""><i class="bg-warning"></i><span>Follow back those who follow you</span>
+                                                <a href="#" class="ti-close"></a>
+                                            </label>
+                                            </li>
+                                            <li class="color-danger">
+                                                <label>
+                                                <input type="checkbox" checked=""><i class="bg-danger"></i><span>Connect with one new person</span>
+                                                <a href="#" class="ti-close"></a>
+                                            </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <input type="text" class="tdl-new form-control" placeholder="Type here">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
                 <!-- End Page Content -->
 
+                <div id="canvas-holder" style="width:40%"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+        <canvas id="chart-area" style="display: block; width: 570px; height: 285px;" width="570" height="285" class="chartjs-render-monitor"></canvas>
+    </div>
+
             <!-- End Container fluid  -->
         </div>
+
+            <footer class="footer"> Made with <3 <a href="https://twitter.com/yasin__toy">Yasin Toy</a></footer>
         <!-- End Page wrapper  -->
     </div>
     <!-- End Wrapper -->
+    <script type="text/javascript">
+        
+
+
+    </script>
 
     <script src="{%static 'js/lib/jquery/jquery.min.js'%}"></script>
     <!-- Bootstrap tether Core JavaScript -->

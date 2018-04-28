@@ -55,10 +55,34 @@ class GetUserRepoInfo(object):
 		},
 	"""
 
+	""" 
+{'languages': {'HTML': 2,
+               'Java': 2,
+               'JavaScript': 7,
+               'Objective-C': 1,
+               'Python': 6,
+               'Unknown': 1},
+ 'most_popular_project': {'created_at': '2016-07-11T11:38:25Z',
+                          'description': 'A beautiful Slack command line '
+                                         'interface.',
+                          'forks': 23,
+                          'name': 'Slack-Gitsin',
+                          'stars': 617,
+                          'url': 'https://github.com/yasintoy/Slack-Gitsin'},
+ 'total_forks': 46,
+ 'total_stars': 883}
+
+	"""
+	def _calculate_repo_per_language(self, data):
+		total_repos = float(sum(data["languages"].values()))
+		return {key: round((value/total_repos)*100) for (key, value) in data["languages"].items()}
+
 	def _extract_infos(self, data):
-		response = {"most_popular_project": {"stars": 0}}
+		response = {"most_popular_project": {"stars": 0}, "languages": {}, "repos": []}
 		for repo in data:
-			response[repo["language"]] = response.get(repo["language"], 0) + 1
+			response["repos"].append({"name": repo["name"], "is_fork": repo["fork"]})
+			language = repo["language"] if repo["language"] is not None else "Unknown"
+			response["languages"][language] = response["languages"].get(language, 0) + 1
 			if repo["stargazers_count"] > response["most_popular_project"]["stars"]:
 				response["most_popular_project"] = {
 					"name": repo["name"],
@@ -75,4 +99,5 @@ class GetUserRepoInfo(object):
 	def execute(self, username):
 		api_response = Client().user_repo_info(url_params={"username": username})
 		response = self._extract_infos(api_response)
+		response.update({"languages_per_repos": self._calculate_repo_per_language(response)})
 		return response

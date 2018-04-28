@@ -19,4 +19,6 @@ class VisualizeView(View):
 	def get(self, request, *args, **kwargs):
 		analysis = Analysis()
 		response = analysis.execute("yasintoy")
-		return render(request, self.template_name, {"info": response["user_info"]}) 
+		return render(request, self.template_name, {"info": response["user_info"], 
+													"user_raking": response["user_raking"],
+													"repo_info": response["repo_info"]}) 
