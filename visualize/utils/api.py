@@ -34,7 +34,7 @@ class Client(object):
     """
     _endpoints = {
         'user_info': 'users/{username}',
-        'user_repo_info': 'users/{username}/repos?per_page=35&sort=created&direction=desc',
+        'user_repo_info': 'users/{username}/repos?per_page=50&sort=created&direction=desc',
         'user_commits': 'repos/{username}/{repo_name}/commits?per_page=100&page={page}'
     }
 

@@ -55,6 +55,7 @@ class GetUserCommits():
 		print ("Total commits: %d" % self.result["total_commits"])
 		self.result["all_commits"].sort(key=lambda item: item["date"], reverse=True)
 		self.result["last_5_commits"].extend(self.result["all_commits"][:5])
+		import ipdb; ipdb.set_trace()
 		self.most_popular_words()
 		return self.result
 
