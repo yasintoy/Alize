@@ -30,7 +30,7 @@ class Analysis(object):
 		cache.set(username + "_ranking", response)
 		return response
 
-	def _get_user_commits_info(username, repo_info):
+	def _get_user_commits_info(self, username, repo_info):
 		commits = GetUserCommits([repo["name"] for repo in repo_info["repos"] if not repo["is_fork"] ])
 		response = commits.execute(username)
 		cache.set(username + "_commits", response)
@@ -40,17 +40,17 @@ class Analysis(object):
 		if username in cache:
 			user_info = cache.get(username)
 			repo_info = cache.get(username + "_repo")
-			user_raking= cache.get(username + "_ranking")
-			commits_info= cache.get(username + "_commits")
+			user_raking = cache.get(username + "_ranking")
+			commits_info = cache.get(username + "_commits")
 		else:
 			user_info = self._get_user_info(username)
 			repo_info = self._get_user_repository_info(username)
 			user_raking = self._get_user_ranking(username)
 			commits_info = self._get_user_commits_info(username, repo_info)
-			
+
 		return {
 			"user_info": user_info,
 			"user_raking": user_raking,
 			"repo_info": repo_info,
-			"commits_info": commits_info
+			"commits_info": commits_info,
 		}

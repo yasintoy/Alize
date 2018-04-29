@@ -59,7 +59,7 @@ class GetUserRepoInfo(object):
 		return {key: round((value/total_repos)*100) for (key, value) in data["languages"].items()}
 
 	def _extract_infos(self, data):
-		response = {"most_popular_project": {"stars": 0}, "languages": {}, "repos": []}
+		response = {"most_popular_project": {"stars": 0}, "languages": {}, "repos": [], "total_stars": 0, "total_forks": 0}
 		for repo in data:
 			response["repos"].append({"name": repo["name"], "is_fork": repo["fork"]})
 			language = repo["language"] if repo["language"] is not None else "Unknown"
@@ -73,12 +73,12 @@ class GetUserRepoInfo(object):
 					"forks": repo["forks"],
 					"created_at": repo["created_at"]
 				}
-			response["total_stars"] = response.get("total_stars", 0) + repo["stargazers_count"] 
-			response["total_forks"] = response.get("total_forks", 0) + repo["forks"] 
+			response["total_stars"] += repo["stargazers_count"] 
+			response["total_forks"] += repo["forks"] 
 		return response
 
 	def execute(self, username):
-		api_response = Client().user_repo_info(url_params={"username": username})
-		response = self._extract_infos(api_response)
+		request = Client().user_repo_info(url_params={"username": username}, pure=True)
+		response = self._extract_infos(request.json())
 		response.update({"languages_per_repos": self._calculate_repo_per_language(response)})
 		return response

@@ -13,12 +13,21 @@ from visualize.usecases.analysis import Analysis
 CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
 
 
+class HomeView(View):
+	template_name = 'home.html'
+
+	def get(self, request, *args, **kwargs):
+		return render(request, self.template_name)
+	
+
 class VisualizeView(View):
 	template_name = 'index.html'
 
 	def get(self, request, *args, **kwargs):
+		username = self.kwargs["username"]
 		analysis = Analysis()
-		response = analysis.execute("yasintoy")
+		response = analysis.execute(username)
 		return render(request, self.template_name, {"info": response["user_info"], 
 													"user_raking": response["user_raking"],
-													"repo_info": response["repo_info"]}) 
+													"repo_info": response["repo_info"],
+													"commits_info": response["commits_info"]}) 

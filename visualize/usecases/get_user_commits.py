@@ -9,7 +9,7 @@ class GetUserCommits():
 	"""docstring for GetUserCommits"""
 	def __init__(self, repo_info):
 		self.repo_names = repo_info
-		self.result = {"total_commits": 0, "last_10_commits": [], "all_commits": []}
+		self.result = {"total_commits": 0, "last_5_commits": [], "all_commits": []}
 
 	def count_user_commits(self, user):
 		for repo in self.repo_names:
@@ -19,8 +19,8 @@ class GetUserCommits():
 		for c in commits:
 			self.result["all_commits"].append({
 				"name": repo_name,
-				"message": c["commit"]["message"],
-				"date": c["commit"]["committer"]["date"]
+				"message": c["commit"]["message"] if "commit" in c else "",
+				"date": c["commit"]["committer"]["date"] if "commit" in c else ""
 			})
 
 	def most_popular_words(self):
@@ -54,7 +54,7 @@ class GetUserCommits():
 			print ("Repo %s has %d commits" % (repo_name, commit_count))
 		print ("Total commits: %d" % self.result["total_commits"])
 		self.result["all_commits"].sort(key=lambda item: item["date"], reverse=True)
-		self.result["last_10_commits"].extend(self.result["all_commits"][:10])
+		self.result["last_5_commits"].extend(self.result["all_commits"][:5])
 		self.most_popular_words()
 		return self.result
 

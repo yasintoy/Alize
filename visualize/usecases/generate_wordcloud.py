@@ -15,10 +15,10 @@ class GenerateWordCloud(object):
 	"""
 	
 	def execute(self, text):
-		alice_mask = np.array(Image.open(path.join(settings.BASE_DIR, 'static/images/github_mask.png')))
+		alice_mask = np.array(Image.open(path.join(settings.BASE_DIR, 'static/images/mask.png')))
 		stopwords = set(STOPWORDS)
 		stopwords.add("said")
-		wc = WordCloud(background_color="white", max_words=2000, mask=alice_mask,
+		wc = WordCloud(background_color="white", max_words=2000, mask=alice_mask, width=1125,
 						stopwords=stopwords, contour_width=3, contour_color='#26dad2',
 						font_path=path.join(settings.BASE_DIR, 'static/fonts/CabinSketch-Bold.ttf'))
 		wc.generate(text)
