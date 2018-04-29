@@ -54,25 +54,6 @@ class GetUserRepoInfo(object):
 		}
 		},
 	"""
-
-	""" 
-{'languages': {'HTML': 2,
-               'Java': 2,
-               'JavaScript': 7,
-               'Objective-C': 1,
-               'Python': 6,
-               'Unknown': 1},
- 'most_popular_project': {'created_at': '2016-07-11T11:38:25Z',
-                          'description': 'A beautiful Slack command line '
-                                         'interface.',
-                          'forks': 23,
-                          'name': 'Slack-Gitsin',
-                          'stars': 617,
-                          'url': 'https://github.com/yasintoy/Slack-Gitsin'},
- 'total_forks': 46,
- 'total_stars': 883}
-
-	"""
 	def _calculate_repo_per_language(self, data):
 		total_repos = float(sum(data["languages"].values()))
 		return {key: round((value/total_repos)*100) for (key, value) in data["languages"].items()}

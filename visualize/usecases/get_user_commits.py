@@ -2,6 +2,7 @@ import json
 import requests
 
 from visualize.utils.api import Client
+from visualize.usecases.generate_wordcloud import GenerateWordCloud
 
 
 class GetUserCommits():
@@ -21,8 +22,11 @@ class GetUserCommits():
 				"message": c["commit"]["message"],
 				"date": c["commit"]["committer"]["date"]
 			})
-	def most_popular_words():
-		pass
+
+	def most_popular_words(self):
+		generate = GenerateWordCloud()
+		self.result["word_cloud_file"] = generate.execute("".join([i["message"] for i in self.result["all_commits"]]))
+
 	def count_repo_commits(self, user, repo, _acc=0, page=1):
 		request = Client().user_commits(url_params={"username": user, "repo_name": repo, "page": page}, pure=True)
 		commits = request.json()
@@ -52,5 +56,5 @@ class GetUserCommits():
 		self.result["all_commits"].sort(key=lambda item: item["date"], reverse=True)
 		self.result["last_10_commits"].extend(self.result["all_commits"][:10])
 		self.most_popular_words()
-		import ipdb; ipdb.set_trace()
-		
+		return self.result
+
