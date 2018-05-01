@@ -1,8 +1,9 @@
+import os
 from functools import partial
 
 import requests
-from urllib.parse import urljoin
 from django.conf import settings
+import urlparse
 
 
 def _make_request(url, cls, method='GET', params=None, url_params=None, pure=False, **kwargs):
@@ -43,9 +44,9 @@ class Client(object):
             raise AttributeError(name)
 
         url = self._endpoints[name]
+        print "url -> " + os.path.join(settings.API_BASE, url)
         return partial(
             _make_request,
-            url=urljoin(settings.API_BASE, url),
+            url=os.path.join(settings.API_BASE, url),
             cls=self
         )
-

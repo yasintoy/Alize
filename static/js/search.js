@@ -12,19 +12,6 @@ $(document).ready(function() {
       midAnim = 200,
       bigAnim = 400,
       animating = false;
-
-
-  // Execute a function when the user releases a key on the keyboard
-input.addEventListener("keyup", function(event) {
-  // Cancel the default action, if needed
-  event.preventDefault();
-  // Number 13 is the "Enter" key on the keyboard
-  if (event.keyCode === 13) {
-    // Trigger the button element with a click
-    document.getElementById("search active").click();
-    alert("deneme")
-  }
-});
   
   $(document).on("click", ".search:not(.active)", function() {
     if (animating) return;
@@ -41,6 +28,7 @@ input.addEventListener("keyup", function(event) {
     });
     
   });
+
   
   $(document).on("click", ".search-close", function() {
     if (animating) return;
@@ -58,4 +46,16 @@ input.addEventListener("keyup", function(event) {
     }, backDelay);
   });
   
+
+
+  $(".search-input").on("keydown",function search(e) {
+      if(e.keyCode == 13) {
+          e.preventDefault();
+          var myURL = document.location.href;
+          document.location.href = myURL + e.target.value;
+          $.busyLoadFull("show");
+
+      }
+  });
+
 });

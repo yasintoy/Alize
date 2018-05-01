@@ -10,7 +10,7 @@ from visualize.usecases.get_user_info import GetUserInfo
 from visualize.usecases.analysis import Analysis
 
 
-CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
+CACHE_TTL = settings.CACHE_TTL
 
 
 class HomeView(View):

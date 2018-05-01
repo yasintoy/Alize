@@ -69,4 +69,3 @@ class GetUserInfo(object):
 		api_response = Client().user_info(url_params={"username": username})
 		response = self._extract_infos(api_response)
 		return response
-
