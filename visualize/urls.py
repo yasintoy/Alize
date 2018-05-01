@@ -19,5 +19,5 @@ from django.conf.urls import url, include
 from .views import VisualizeView, HomeView
 
 urlpatterns = [
-    url('^(?P<username>[\w\-]+)$', VisualizeView.as_view())
+    url('(?P<username>[\w\-]+)$', VisualizeView.as_view())
 ]
