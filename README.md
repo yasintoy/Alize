@@ -21,7 +21,7 @@ Alize
 
 Before start, you should install redis.
 
-** Install Redis **
+**Install Redis :**
 
 If you have't redis [Follow this steps](https://medium.com/@petehouston/install-and-config-redis-on-mac-os-x-via-homebrew-eb8df9a4f298)
 
