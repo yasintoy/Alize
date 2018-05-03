@@ -50,20 +50,20 @@ $(in main tab) python manage.py runserver
 
 ### Profile Tab
 
-#### ![image](screen_shots/0.png)
+#### ![image](screen_shots/1.png)
 
 ### Profile Infos
-#### ![image](screen_shots/1.png)
+#### ![image](screen_shots/2.png)
 
 ### Contributions Activity and percentage of per repo languages 
 
-#### ![image](screen_shots/2.png)
-
-### World, Country and City Ranking
 #### ![image](screen_shots/3.png)
 
-###  Recent Commits
+### World, Country and City Ranking
 #### ![image](screen_shots/4.png)
+
+###  Recent Commits
+#### ![image](screen_shots/5.png)
 
 - Most Used Words In Commit Messages
 #### ![image](screen_shots/wordcloud.png)
