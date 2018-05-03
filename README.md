@@ -21,9 +21,9 @@ Alize
 Before start, you should install redis.
 
 ** Install Redis **
-```
-[Follow this steps](https://medium.com/@petehouston/install-and-config-redis-on-mac-os-x-via-homebrew-eb8df9a4f298)
-```
+
+If you have't redis [Follow this steps](https://medium.com/@petehouston/install-and-config-redis-on-mac-os-x-via-homebrew-eb8df9a4f298)
+
 **For Mac/Linux :**
 ```
 git clone https://github.com/yasintoy/Alize.git
