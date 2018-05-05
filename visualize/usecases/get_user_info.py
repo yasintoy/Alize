@@ -67,5 +67,7 @@ class GetUserInfo(object):
 	def execute(self, username):
 		self.validate(username)
 		api_response = Client().user_info(url_params={"username": username})
+		if "message" in api_response:
+			return False
 		response = self._extract_infos(api_response)
 		return response

@@ -15,6 +15,8 @@ class Analysis(object):
 	def _get_user_info(self, username):
 		get_user_info = GetUserInfo()
 		response = get_user_info.execute(username)
+		if not response:
+			return False
 		cache.set(username, response)
 		return response
 
@@ -44,6 +46,8 @@ class Analysis(object):
 			commits_info = cache.get(username + "_commits")
 		else:
 			user_info = self._get_user_info(username)
+			if not user_info:
+				return False
 			repo_info = self._get_user_repository_info(username)
 			user_raking = self._get_user_ranking(username)
 			commits_info = self._get_user_commits_info(username, repo_info)
