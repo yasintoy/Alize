@@ -4,8 +4,6 @@ Alize
 # ![Alize](screen_shots/logo.png)
 
 > *Visualize your GitHub profile and use in your CV. I'll add pdf export feature as soon as*
-> *Currently working demo is on*
-> [alize.me](http://alize.me)
 
 # ![](screen_shots/demo.gif)
 
